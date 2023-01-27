@@ -1,0 +1,74 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    height: 100vh;/*view height*/
+    display: grid;
+    place-items: center;
+    color: #adb5bd;
+    background-color: #111;
+    font-family: sans-serif;
+}
+
+/*label*/
+div[class ^="line-"] {
+    width: 100px;
+    height: 10px;
+    background-color: #fff;
+    margin: 10px 0;
+    transition: all 1s ease;
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -ms-transition: all 1s ease;
+    -o-transition: all 1s ease;
+}
+
+/* Styling for .lines class*/
+
+.lines {
+    z-index: 1;
+    cursor: pointer;
+}
+
+/* This is the Hamburger menu Toggle on & off*/
+
+/*when our input with an id menue-active is checked it's gonna target the label, and do the changes according to the styles we have set*/
+#menu-active:checked ~ label .line-1 {
+    transform: translateY(10px) rotate(45deg);
+    -webkit-transform: translateY(10px) rotate(45deg);
+    -moz-transform: translateY(10px) rotate(45deg);
+    -ms-transform: translateY(10px) rotate(45deg);
+    -o-transform: translateY(10px) rotate(45deg);
+    margin: 10px 0;
+}
+
+#menu-active:checked ~ label .line-2 {
+    /*for cross we don't need this line so scale will be 0*/
+    transform: scale(0);
+    -webkit-transform: scale(0);
+    -moz-transform: scale(0);
+    -ms-transform: scale(0);
+    -o-transform: scale(0);
+}
+
+#menu-active:checked ~ label .line-3 {
+    transform: translateY(-10px) rotate(-45deg);
+    -webkit-transform: translateY(-10px) rotate(-45deg);
+    -moz-transform: translateY(-10px) rotate(-45deg);
+    -ms-transform: translateY(-10px) rotate(-45deg);
+    -o-transform: translateY(-10px) rotate(-45deg);
+    margin: -20px 0;
+}
+
+/*Styling configuration for the .menu class
+This is the mai container that holds the 3 sections
+The (.items.first), label & (.items.last)*/
+
+input[type="checkbox"] {
+    display: none;
+}
+
